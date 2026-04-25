@@ -1,35 +1,133 @@
+/* RESET GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0f172a;
-    color: white;
+    color: #f1f5f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px; /* Margen para pantallas pequeñas */
 }
 
 .contenedor {
     background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo en desktop */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #38bdf8; /* Azul claro financiero */
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #94a3b8;
 }
 
 input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+    padding: 12px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #38bdf8;
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #22c55e;
+    padding: 14px;
+    background-color: #10b981; /* Verde esmeralda */
     border: none;
+    border-radius: 6px;
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #16a34a;
+    background-color: #059669;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* RESULTADOS */
+.seccion-resultados {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #94a3b8;
+}
+
+p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+span {
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.total {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #10b981;
+}
+
+.total span {
+    color: #10b981;
+}
+
+/* REGLAS RESPONSIVE (CELULARES) */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    input, button {
+        font-size: 16px; /* Evita que iOS haga zoom automático */
+    }
 }
